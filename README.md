@@ -1,53 +1,70 @@
-# Netflix GPT
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Netflix-GPT is a React web application that provides personalized movie recommendations powered by OpenAI's GPT. It fetches movie data via the ChatGPT API, offering a user-friendly interface with customization options. Users can explore movies tailored to their taste, sign up, log in, update their profile, and enjoy a seamless browsing experience.
+## Available Scripts
 
-## Key Features
+In the project directory, you can run:
 
-- Create React App with TailwindCSS configuration
-- Header component for easy navigation
-- User authentication with sign-up and login forms
-- Form validation for input fields
-- Use of useRef hook for form management
-- Firebase setup for user authentication
-- Deployment to production environment
-- Account creation and sign-in functionality
-- Redux store setup with userSlice for state management
-- Implement sign-out feature
-- Profile update capability
-- Bug fixes for sign-up user data and profile picture update
-- Bug fixes for redirection to login page if user is not logged in
-- Unsubscribe from onAuthStateChanged callback
-- Integration of hardcoded values in the constants file
-- Registration of TMDB API, creation of app, and acquisition of access token
-- Fetching data from TMDB's now playing movies list API
-- Custom hook for fetching now playing movies
-- Creation of movieSlice and update of store with movies data
-- MainContainer and secondary container planning
-- Fetching trailer video data and updating store
-- Embedding YouTube video with autoplay and mute options
-- Application of Tailwind CSS classes for UI enhancement
-- Implementation of features for responsive design
-- GPT search page and search bar creation
-- Fetching GPT movies suggestions from TMDB
-- Creation of gptSlice and addition of data
-- Reuse of Movie List component to make movie suggestion container
-- Memoization for performance optimization
-- Addition of .env file and configuration for TMDB and OpenAI API keys
+### `npm start`
 
-## Project Setup
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-1. Clone the repository
-2. Add TMDB and OpenAI API keys to the `.env` file
-3. Install dependencies with `npm install`
-4. Run the app locally with `npm start`
-5. Explore personalized movie recommendations and enjoy!
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Contributions
+### `npm test`
 
-Contributions are welcome! Feel free to submit bug fixes, feature enhancements, or suggestions via pull requests. Please ensure to follow the project's code of conduct.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<!-- ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. -->
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
