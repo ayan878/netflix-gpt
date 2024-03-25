@@ -4,7 +4,28 @@
 
 Netflix-GPT is a React web application that provides personalized movie recommendations powered by OpenAI's GPT. It fetches movie data via the ChatGPT API, offering a user-friendly interface with customization options. Users can explore movies tailored to their taste, sign up, log in, update their profile, and enjoy a seamless browsing experience.
 
+## Setup
+- Create React App
+- Configure Tailwindcss
+- Header
+- Login Form
+
 ## Key Features
+-Login/Sign Up
+    -Sign In / Sign Up Form 
+    -redirect to Browse Page
+- Browse  (After Authencation)
+    -Header
+    -Main Movie
+        -Trailer in Background
+        -Title and Description
+        -Movies Suggestions
+            -MovieList * n
+-NetflixGPT
+    -Search Bar
+    -Movie Suggestions
+
+
 
 - Create React App with TailwindCSS configuration
 - Header component for easy navigation
