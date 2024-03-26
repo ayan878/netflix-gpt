@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Netflix_Logo_PMS.png";
 import { checkValideData } from "../utils/validate";
@@ -15,6 +17,39 @@ function Login() {
     console.log(email, password);
     const message = checkValideData(email, password);
     setErrorMessage(message);
+
+    if(message)return
+
+if(!isSignInForm){
+  // sign Up logic
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user)
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setErrorMessage(errorCode +"-"+ errorMessage)
+    });
+}
+else{
+  // sign in logic
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user)
+    
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+        setErrorMessage(errorCode + "-" + errorMessage);
+    });
+
+}
+  
   };
   const toggleSignInForm = () => {
     setIsSignInForm((prevIsSignInForm) => !prevIsSignInForm);
@@ -28,7 +63,7 @@ function Login() {
       <div className="absolute top-4 my-4 left-0 right-0 mx-auto flex justify-center items-center">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="p-12 bg-black bg-opacity-50 rounded-md"
+          className="p-12 bg-black bg-opacity-80 rounded-md"
         >
           <label className="text-3xl font-bold text-gray-100 block mb-6">
             Sign {isSignInForm ? "In" : "Up"}
