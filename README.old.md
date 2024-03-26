@@ -8,8 +8,10 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Create React App
 - Configure Tailwindcss
 - Header
+- Routin of App
 - Login Form
 - Sign up Form
+-
 
 ## Key Features
 -Login/Sign Up
