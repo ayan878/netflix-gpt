@@ -16,6 +16,8 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Firebase setup
 - Deploying out app to production
 - Create Sign up user account
+- Implement Sign In user Api
+- Created Redux Store with userSlice
 
 ## Key Features
 -Login/Sign Up
