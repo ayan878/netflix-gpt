@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Netflix_Logo_PMS.png";
 import { checkValideData } from "../utils/validate";
+import Header from "./Header";
 
 function Login() {
   const [isSignInForm, setIsSignInForm] = useState(true);
 
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [errorMessage, setErrorMessage] = useState();
+  const navigate = useNavigate();
   const handleButtonClick = (e) => {
     // e.preventDefault();
     // validate the form data
@@ -18,51 +25,58 @@ function Login() {
     const message = checkValideData(email, password);
     setErrorMessage(message);
 
-    if(message)return
+    if (message) return;
 
-if(!isSignInForm){
-  // sign Up logic
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user)
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      setErrorMessage(errorCode +"-"+ errorMessage)
-    });
-}
-else{
-  // sign in logic
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log(user)
-    
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-        setErrorMessage(errorCode + "-" + errorMessage);
-    });
-
-}
-  
+    if (!isSignInForm) {
+      // sign Up logic
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          //display name
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL:
+              "https://avatars.githubusercontent.com/u/91191292?s=96&v=4",
+          })
+            .then(() => {})
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
+          navigate("/browse");
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      // sign in logic
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          navigate("/browse");
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    }
   };
   const toggleSignInForm = () => {
     setIsSignInForm((prevIsSignInForm) => !prevIsSignInForm);
   };
 
   return (
-    <div
-      className="bg-cover bg-center h-screen md:bg-hero-pattern bg-black"
-    >
-      <div className="absolute px-8 py-2 bg-gradient-to-b from-black top-0">
+    <div className="bg-cover bg-center h-screen md:bg-hero-pattern bg-black">
+      {/* <div className="absolute px-8 py-2 bg-gradient-to-b from-black top-0">
         <img className="w-40 ml-4" src={Logo} alt="Logo" />
-      </div>
-      <div className="absolute top-4 my-4 left-0 right-0 mx-auto flex justify-center items-center">
+      </div> */}
+      <Header />
+      <div className="absolute top-10 my-4 left-0 right-0 mx-auto flex justify-center items-center">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="p-12 bg-black bg-opacity-80 rounded-md"
@@ -75,6 +89,8 @@ else{
               <input
                 className="text-white border border-gray-400 px-4 py-2 rounded-sm bg-stone-900 placeholder-gray-400 w-full block"
                 placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
           )}
