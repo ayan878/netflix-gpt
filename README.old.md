@@ -13,6 +13,9 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Sign up Form
 - Form Validation
 - useRef Hook
+- Firebase setup
+- Deploying out app to production
+- Create Sign up user account
 
 ## Key Features
 -Login/Sign Up
