@@ -57,7 +57,7 @@ else{
 
   return (
     <div
-      className="bg-cover bg-center h-screen lg:bg-hero-pattern  sm:bg-black"
+      className="bg-cover bg-center h-screen md:bg-hero-pattern bg-black"
     >
       <div className="absolute px-8 py-2 bg-gradient-to-b from-black top-0">
         <img className="w-40 ml-4" src={Logo} alt="Logo" />
