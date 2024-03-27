@@ -19,6 +19,7 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Implement Sign In user Api
 - Created Redux Store with userSlice
 - Update Profile bugs fixed on 3:45
+- Fetch from TMDB Movies
 
 ## Key Features
 -Login/Sign Up
