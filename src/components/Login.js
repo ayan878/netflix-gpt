@@ -5,8 +5,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/Netflix_Logo_PMS.png";
+import { Link} from "react-router-dom";
 import { checkValideData } from "../utils/validate";
 import Header from "./Header";
 
@@ -17,7 +16,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [errorMessage, setErrorMessage] = useState();
-  const navigate = useNavigate();
+
   const handleButtonClick = (e) => {
     // e.preventDefault();
     // validate the form data
@@ -42,7 +41,6 @@ function Login() {
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          navigate("/browse");
           console.log(user);
         })
         .catch((error) => {
@@ -56,7 +54,6 @@ function Login() {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
           console.log(user);
         })
         .catch((error) => {
@@ -135,13 +132,6 @@ function Login() {
               <label className="text-stone-600">
                 {isSignInForm ? "New to Netflix?" : "Already have an account?"}
               </label>
-              {/* <Link
-                className="text-gray-200"
-                to={isSignInForm ? "/login" : "/signup"}
-                onClick={toggleSignInForm}
-              >
-                {isSignInForm ? "Sign up now." : "Sign in."}
-              </Link> */}
               <p className="text-gray-200" onClick={toggleSignInForm}>
                 {isSignInForm ? "Sign up now." : "Sign in."}
               </p>
