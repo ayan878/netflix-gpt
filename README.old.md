@@ -22,6 +22,12 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Fetch from TMDB Movies
 - BugFix:Sign up user displayName and profile update 
 - BugFix:if user is not logged in Redirect to login page '/' and vice-versa
+- Unsubscribse to onAuthStateChanged CallBack
+- Add hardcoded values to the constants file(avatar,api,etc)
+- Register TMDB APi & create an app  and get access token
+- Get Data from TMDB now palying movies list API
+
+
 ## Key Features
 -Login/Sign Up
     -Sign In / Sign Up Form 
