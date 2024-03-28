@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Logo from "../assets/Netflix_Logo_PMS.png";
-import ProfileIcon from "../assets/profile-icon.png";
+import { avatar } from "../utils/constants";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +37,7 @@ function Header() {
       }
     });
 
-    // Clean up the subscription on unmount
+    // Clean up the subscription on unmount or unsubscribe when component is unmount
     return unsubscribe;
   }, []); // Empty dependency array to run the effect only once on component mount
 
@@ -48,7 +48,7 @@ function Header() {
         <div className="flex p-2 items-center justify-center space-x-2">
           <img
             className="w-10 h-10 rounded-md"
-            src={user?.photoURL || ProfileIcon}
+            src={user?.photoURL || avatar}
             alt="profile-icon"
           />
           <button className="font-bold text-red-500" onClick={handleSignOut}>

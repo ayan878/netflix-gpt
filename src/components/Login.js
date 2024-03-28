@@ -8,6 +8,7 @@ import { auth } from "../utils/firebase";
 import { Link} from "react-router-dom";
 import { checkValideData } from "../utils/validate";
 import Header from "./Header";
+import { profileURL } from "../utils/constants";
 
 function Login() {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -20,7 +21,7 @@ function Login() {
   const handleButtonClick = (e) => {
     // e.preventDefault();
     // validate the form data
-    console.log(email, password);
+    // console.log(email, password);
     const message = checkValideData(email, password);
     setErrorMessage(message);
 
@@ -35,13 +36,13 @@ function Login() {
           updateProfile(auth.currentUser, {
             displayName: name,
             photoURL:
-              "https://avatars.githubusercontent.com/u/91191292?s=96&v=4",
+              profileURL
           })
             .then(() => {})
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -69,9 +70,6 @@ function Login() {
 
   return (
     <div className="bg-cover bg-center h-screen md:bg-hero-pattern bg-black">
-      {/* <div className="absolute px-8 py-2 bg-gradient-to-b from-black top-0">
-        <img className="w-40 ml-4" src={Logo} alt="Logo" />
-      </div> */}
       <Header />
       <div className="absolute top-10 my-4 left-0 right-0 mx-auto flex justify-center items-center">
         <form

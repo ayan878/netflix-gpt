@@ -26,8 +26,15 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Add hardcoded values to the constants file(avatar,api,etc)
 - Register TMDB APi & create an app  and get access token
 - Get Data from TMDB now palying movies list API
-
-
+- Custom Hook for nowPlayingMovies
+- Create MovieSlice
+- Update Store with movie Data
+- Planning for MainContainer and SecondaryContainer
+- Fetch Data for Trailer Video
+- Update Store with Trailer Video
+- Embedded the Youtube video and make it autopaly and mute 
+- Tailwind Classes to make MainContainer look Awesome 
+-
 ## Key Features
 -Login/Sign Up
     -Sign In / Sign Up Form 

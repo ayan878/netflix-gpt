@@ -1,10 +1,21 @@
-import React from 'react'
-import Header from './Header'
-
+import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
+import MainContainer from "./MainContainer";
 function Browse() {
+ useNowPlayingMovies()
   return (
-    <div><Header/></div>
-  )
+    <div>
+      <Header />
+      <MainContainer/>
+    
+      {/* MainCotainer
+            - VideoBackgroud
+            - videoTitle
+          SecondaryContainer
+            - MoviesList * n
+              -Cards * n   */}
+    </div>
+  );
 }
 
-export default Browse
+export default Browse;
