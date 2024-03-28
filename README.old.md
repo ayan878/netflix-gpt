@@ -36,7 +36,12 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Tailwind Classes to make MainContainer look Awesome 
 - Build Secondary Container
 - Build Movies List
-- 
+- Build Movie Card
+- TMDB Image CDN URL
+- Made the Browse page amazing with tailwind CSS
+- Hide Scroll Bar using tailwind utilities
+- usePopular Custom hook
+- useTopRated Custom hook etc..
 ## Key Features
 -Login/Sign Up
     -Sign In / Sign Up Form 
