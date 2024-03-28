@@ -15,13 +15,6 @@ function Browse() {
       <Header />
       <MainContainer/>
       <SecondaryContainer/>
-    
-      {/* MainCotainer
-            - VideoBackgroud
-            - videoTitle
-          SecondaryContainer
-            - MoviesList * n
-              -Cards * n   */}
     </div>
   );
 }
