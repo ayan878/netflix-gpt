@@ -34,7 +34,9 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Update Store with Trailer Video
 - Embedded the Youtube video and make it autopaly and mute 
 - Tailwind Classes to make MainContainer look Awesome 
--
+- Build Secondary Container
+- Build Movies List
+- 
 ## Key Features
 -Login/Sign Up
     -Sign In / Sign Up Form 
