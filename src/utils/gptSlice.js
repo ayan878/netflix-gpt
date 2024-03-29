@@ -10,11 +10,6 @@ const gptSlice = createSlice({
     toggleSearch: (state, action) => {
       return { ...state, searchToggle: !state.searchToggle };
     },
-    searchExpanded:(state,action)=>{
-        return {
-            ...state,searchExpanded:!state.searchExpanded
-        }
-    }
   },
 });
 

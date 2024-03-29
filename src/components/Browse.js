@@ -16,7 +16,7 @@ function Browse() {
   useUpcomingMovie();
   useTopRatedMovie();
   return (
-    <div>
+    <div className="bg-hero-pattern h-screen">
       <Header />
       {searchToggle ? (
         <GptSearch />
