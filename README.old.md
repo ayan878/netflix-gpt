@@ -42,6 +42,7 @@ Netflix-GPT is a React web application that provides personalized movie recommen
 - Hide Scroll Bar using tailwind utilities
 - usePopular Custom hook
 - useTopRated Custom hook etc..
+- GPT Search feature
 ## Key Features
 -Login/Sign Up
     -Sign In / Sign Up Form 
