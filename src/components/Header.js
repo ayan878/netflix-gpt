@@ -6,15 +6,15 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { toggleSearch } from "../utils/gptSlice";
+import { toggleSearch,searchExpanded } from "../utils/gptSlice";
 import { FaSearch } from "react-icons/fa";
 
 function Header() {
-  const [expanded, setExpanded] = useState(false);
   const user = useSelector((store) => store.user);
+  const expanded = useSelector((store) => store.gpt.searchExpanded);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+ console.log(expanded)
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -45,7 +45,7 @@ function Header() {
 
   const handleGptSearchClick = () => {
     // Toggle GPT Search Button
-    setExpanded(!expanded);
+    dispatch(searchExpanded())
     dispatch(toggleSearch());
   };
 
@@ -56,20 +56,19 @@ function Header() {
         <div className="flex items-center justify-center  space-x-2">
           <div
             className={`flex items-center rounded-lg border ${
-              expanded ? "flex w-72 justify-between px-4 " : "w-8 border-none"
-            } transition-width duration-1000 `}
+              expanded ? "flex w-72 px-4 " : "w-8 border-none"
+            } transition-width duration-100 `}
           >
-            {expanded && (
-              <input
-                type="search"
-                className="py-2 text-white bg-transparent focus:outline-none"
-                placeholder="Search"
-              />
-            )}
-
             <button className="text-white" onClick={handleGptSearchClick}>
               <FaSearch />
             </button>
+            {expanded && (
+              <input
+                type="search"
+                className="py-2 px-2 w-full text-white bg-transparent focus:outline-none"
+                placeholder="Search..."
+              />
+            )}
           </div>
 
           <img
