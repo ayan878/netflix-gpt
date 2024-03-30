@@ -10,15 +10,18 @@ if (!movies) return null;
  
 
 
-  return (
+  return ( 
     movies.moviesSearch && (
-      <div className="w-screen">
-        <div className="pt-[30%] md:pt-0  pl-4  md:pl-12 relative z-20">
-          <MovieList title={"Search Results"} movies={movies.moviesSearch} />
-          <MovieList title={"Top Rated"} movies={movies.topRatedMovies} />
+      <div className="w-screen pt-28 bg-black">
+        <div className="relative pt-[30%] md:pt-0  pl-4  md:pl-12 z-20 ">
+          <MovieList
+            title={"Search Results"}
+            movies={movies.moviesSearch}
+          />
+           <MovieList title={"Top Rated"} movies={movies.topRatedMovies} />
           <MovieList title={"Popular"} movies={movies.popularMovies} />
           <MovieList title={"Trending"} movies={movies.nowPlayingMovies} />
-          <MovieList title={"Upcoming Movies"} movies={movies.upcomingMovies} />
+          <MovieList title={"Upcoming Movies"} movies={movies.upcomingMovies} /> 
         </div>
       </div>
     )

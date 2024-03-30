@@ -7,12 +7,13 @@ const MainContainer = () => {
 
   if (!movies) return;
 
-  const mainMovie = movies.results[0];
+  const randomNumber = Math.floor(Math.random() * 20);
+  const mainMovie = movies.results[randomNumber];
 
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <div className="pt-[30%] bg-black md:pt-0">
+    <div className="pt-[40%] bg-black md:pt-0">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>
