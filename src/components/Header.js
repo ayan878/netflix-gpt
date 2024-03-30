@@ -6,7 +6,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import GptSearchBar from "./GptSearchBar";
+// import GptSearchBar from "./GptSearchBar";
+import SearchBar from "./SearchBar";
 
 function Header() {
   const user = useSelector((store) => store.user);
@@ -46,7 +47,7 @@ function Header() {
       <img className="w-40 ml-4" src={Logo} alt="Logo" />
       {user && (
         <div className="flex items-center justify-center  space-x-2">
-          <GptSearchBar />
+          <SearchBar/>
 
           <img
             className="w-10 h-10 rounded-md"
