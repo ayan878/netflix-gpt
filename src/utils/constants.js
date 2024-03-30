@@ -14,10 +14,14 @@ export const API_OPTIONS = {
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
-
-
 export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hi", name: "Hindi" },
   { identifier: "ar", name: "Arabic" },
 ];
+
+// export const OPENAI_API_KEY = "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";
+
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+

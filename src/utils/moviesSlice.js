@@ -6,6 +6,7 @@ const moviesSlice = createSlice({
     nowPlayingMovies: null,
     trailerVideo: null,
     popularMovies: null,
+    moviesSearch:null,
   },
   reducers: {
     addNowPlayingMovies: (state, action) => {
@@ -26,8 +27,13 @@ const moviesSlice = createSlice({
     addTopRatedMovies: (state, action) => {
       return { ...state, topRatedMovies: action.payload };
     },
+    addMovies: (state, action) => {
+      return { ...state, moviesSearch: action.payload };
+    },
   },
 });
 
-export const { addNowPlayingMovies, addTrailerVideo,addPopularMovies,addUpcomingMovies,addTopRatedMovies } = moviesSlice.actions;
+export const { addNowPlayingMovies, addTrailerVideo,addPopularMovies,addUpcomingMovies,addTopRatedMovies,addMovies } = moviesSlice.actions;
 export default moviesSlice.reducer;
+
+// I'm Adding movies form tmdb API bcz openAI is paid after billing i will remove it and fetch movies form openAI
