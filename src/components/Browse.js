@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Footer from "./Footer";
 import useMovieDetails from "../hooks/useMovieDetails";
 
+
 function Browse() {
   const searchToggle = useSelector((store) => store.gpt.searchToggle);
   // custom hooks

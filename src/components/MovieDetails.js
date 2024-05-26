@@ -6,6 +6,8 @@ import "react-circular-progressbar/dist/styles.css";
 import { IMG_CDN_URL } from "../utils/constants";
 import useMovieDetails from "../hooks/useMovieDetails";
 import Header from "./Header";
+import MovieCastList from "./MovieCastList";
+import Footer from "./Footer";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -30,7 +32,7 @@ const MovieDetails = () => {
   return (
     <>
       <div className="relative text-white bg-black bg-opacity-70">
-        <Header/>
+        <Header />
         <div
           className="absolute top-20 left-0 w-full h-full bg-cover bg-center blur-xs"
           style={{
@@ -94,8 +96,12 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
+      <MovieCastList/>
+      <Footer/>
     </>
   );
 };
 
 export default MovieDetails;
+
+// const castUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`;

@@ -1,19 +1,21 @@
 import { useDispatch } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
-import { addMovieDetails } from "../utils/moviesSlice";
+import { addMovieCast } from "../utils/moviesSlice";
 import { useEffect } from "react";
 
-const useMovieDetails = (movie_id) => {
+const useMovieCast = (movie_id) => {
+ 
   const dispatch = useDispatch();
 
-  const getMovieDetails = async () => {
+  const getMovieCast = async () => {
     try {
       const data = await fetch(
-        `https://api.themoviedb.org/3/movie/${movie_id}`,
+        `https://api.themoviedb.org/3/movie/${movie_id}/credits?`,
         API_OPTIONS
       );
       const json = await data.json();
-      dispatch(addMovieDetails(json));
+      console.log("moviesCast", json);
+      dispatch(addMovieCast(json));
     } catch (error) {
       console.error("Error fetching now playing movies:", error);
     }
@@ -21,9 +23,9 @@ const useMovieDetails = (movie_id) => {
 
   useEffect(() => {
     if (movie_id) {
-      getMovieDetails();
+      getMovieCast();
     }
   }, [movie_id]);
 };
 
-export default useMovieDetails;
+export default useMovieCast;
