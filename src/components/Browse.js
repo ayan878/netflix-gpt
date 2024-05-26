@@ -7,14 +7,17 @@ import useUpcomingMovie from "../hooks/useUpcomingMovie";
 import useTopRatedMovie from "../hooks/useTopRatedMovie";
 import GptSearch from "../components/GptSearch";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
+import useMovieDetails from "../hooks/useMovieDetails";
 
 function Browse() {
-  const searchToggle=useSelector((store)=>store.gpt.searchToggle)
+  const searchToggle = useSelector((store) => store.gpt.searchToggle);
   // custom hooks
   useNowPlayingMovies();
   usePopularMovie();
   useUpcomingMovie();
   useTopRatedMovie();
+  useMovieDetails();
   return (
     <div className="bg-hero-pattern h-screen">
       <Header />
@@ -24,6 +27,7 @@ function Browse() {
         <>
           <MainContainer />
           <SecondaryContainer />
+          <Footer />
         </>
       )}
     </div>
