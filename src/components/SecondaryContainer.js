@@ -3,7 +3,6 @@ import MovieList from "./MovieList";
 
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
- 
 
   return (
     movies.nowPlayingMovies && (
@@ -19,6 +18,5 @@ const SecondaryContainer = () => {
     )
   );
 };
-
 
 export default SecondaryContainer;
